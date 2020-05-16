@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package api;
+
+message Request {
+    string version = 1;
+}
+
+message VersionsResponse {
+    repeated string version = 1;
+}
+
+message DownloadResponse {
+    int64 index = 1;
+    double progress = 2;
+    bytes contents = 3;
+}
+
+service Fileserver {
+    rpc Versions (Request) returns (VersionsResponse) {}
+    rpc Download (Request) returns (stream DownloadResponse) {}
+}
