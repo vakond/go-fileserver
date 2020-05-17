@@ -2,7 +2,7 @@
 
 ### Simple file server
 
-This **toy project** is a simple gRPC file server which can be used to organize and distribute files.
+This **toy project** is a simple gRPC file server which can be used to organize and distribute files. It explores gRPC stream capabilities.
 
 *    Build both fileserver and client:
 
