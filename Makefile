@@ -1,11 +1,11 @@
 all: fileserver client
 
 fileserver:
+	rm -f api/*.pb.go
+	go generate
 	go mod tidy
 	go fmt ./...
 	go vet ./...
-	rm -f api/*.pb.go
-	go generate
 	go install -trimpath
 
 client:
